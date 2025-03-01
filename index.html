@@ -4,64 +4,54 @@
   <meta charset="UTF-8">
   <meta name="keywords" content="магазин, настольный теннис, шарики, купить, спортивные товары">
   <meta name="description" content="Интернет-магазин шариков для настольного тенниса по доступным ценам.">
-  <title>Магазин шариков для настольного тенниса</title>
-  <link rel="stylesheet" href="outlines.css">
+  <title>Awesome Balls</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-<header>
-  <h1>Добро пожаловать в наш магазин шариков для настольного тенниса!</h1>
-  <nav>
-    <ul>
-      <li><a href="#about">О нас</a></li>
-      <li><a href="#products">Продукция</a></li>
-      <li><a href="#contact">Контакты</a></li>
+<body class="page">
+<header class="header">
+  <img src="images/logo.png" alt="Логотип магазина" class="header__logo">
+  <nav class="nav">
+    <ul class="nav__list">
+      <li class="nav__item"><a class="nav__link" href="#about">О нас</a></li>
+      <li class="nav__item"><a class="nav__link" href="#products">Продукция</a></li>
+      <li class="nav__item"><a class="nav__link" href="#contact">Контакты</a></li>
     </ul>
   </nav>
 </header>
-<main>
-  <section id="about">
-    <h2>О нас</h2>
-    <p><strong>Наш магазин</strong> предлагает широкий выбор <em>качественных</em> шариков для настольного тенниса.</p>
+<main class="main">
+  <section id="about" class="section">
+    <h2 class="section__title">О нас</h2>
+    <p class="section__text"><strong>Наш магазин</strong> предлагает широкий выбор <em>качественных</em> шариков для настольного тенниса.</p>
+    <img src="images/about.jpg" alt="Настольный теннис" class="section__image">
   </section>
-  <section id="products">
-    <h2>Продукция</h2>
-    <article>
-      <h3>Топ-3 популярных брендов</h3>
-      <ol>
-        <li><b>Butterfly</b></li>
-        <li><b>Nittaku</b></li>
-        <li><b>DHS</b></li>
-      </ol>
-    </article>
-    <aside>
-      <h3>ASCII-арт</h3>
-      <pre>
-          ,;;;!!!!!;;.
-        :!!!!!!!!!!!!!!;
-      :!!!!!!!!!!!!!!!!!;
-     ;!!!!!!!!!!!!!!!!!!!;
-    ;!!!!!!!!!!!!!!!!!!!!!
-    ;!!!!!!!!!!!!!!!!!!!!'
-    ;!!!!!!!!!!!!!!!!!!!'
-     :!!!!!!!!!!!!!!!!'
-      ,!!!!!!!!!!!!!''
-   ,;!!!''''''''''
- .!!!!'
-!!!!`
-                </pre>
-    </aside>
+  <section id="products" class="section">
+    <h2 class="section__title">Продукция</h2>
+    <div class="products__gallery">
+      <figure class="product">
+        <img src="images/ball1.png" alt="Шарик Butterfly" class="product__image">
+        <figcaption class="product__caption">Butterfly 3-Star</figcaption>
+      </figure>
+      <figure class="product">
+        <img src="images/ball2.png" alt="Шарик Nittaku" class="product__image">
+        <figcaption class="product__caption">Nittaku Premium</figcaption>
+      </figure>
+      <figure class="product">
+        <img src="images/ball3.png" alt="Шарик DHS" class="product__image">
+        <figcaption class="product__caption">DHS 40+</figcaption>
+      </figure>
+    </div>
   </section>
-  <section id="contact">
-    <h2>Контакты</h2>
-    <p>Свяжитесь с нами для <del>устаревших</del> <ins>актуальных</ins> предложений.</p>
-    <blockquote>
-      "Тяжело в учении, легко в отчислении." – Неизвестный слодат-срочник
+  <section id="contact" class="section">
+    <h2 class="section__title">Контакты</h2>
+    <p class="section__text">Свяжитесь с нами для <del>устаревших</del> <ins>актуальных</ins> предложений.</p>
+    <blockquote class="section__quote">
+      "Тяжело в учении, легко в отчислении." – Неизвестный солдат-срочник
     </blockquote>
-    <p>Формула успеха: <strong>E = mc<sup>2</sup></strong></p>
+    <p class="section__formula">Формула успеха: <strong>E = mc<sup>2</sup></strong></p>
   </section>
 </main>
-<footer>
-  <p>&copy; 2025 Магазин шариков для настольного тенниса. Все права защищены.</p>
+<footer class="footer">
+  <p class="footer__text">&copy; 2025 Awesome Balls. Все права защищены.</p>
 </footer>
 </body>
 </html>
