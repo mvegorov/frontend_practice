@@ -1,3 +1,4 @@
+/* Общие стили */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -5,9 +6,11 @@ body {
     background-color: #f5f5f5;
 }
 
+/* Шапка */
 .header {
     display: flex;
     align-items: center;
+    justify-content: space-between; /* Логотип и название слева, меню справа */
     background-color: #ffffff;
     padding: 10px 20px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
@@ -16,6 +19,12 @@ body {
     left: 0;
     width: 100%;
     z-index: 1000;
+}
+
+/* Логотип и название слева */
+.header__brand {
+    display: flex;
+    align-items: center;
 }
 
 .header__logo {
@@ -27,27 +36,87 @@ body {
 .header__title {
     font-size: 24px;
     font-weight: bold;
-    color: #333;
+    color: #df8d16;
 }
 
+/* Навигационное меню по центру */
+.header__nav {
+    position: absolute; /* Абсолютное позиционирование для центрирования */
+    left: 50%; /* Сдвигаем меню на 50% вправо */
+    transform: translateX(-50%); /* Центрируем меню */
+}
+
+.nav__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px; /* Увеличиваем отступ между пунктами */
+}
+
+.nav__item {
+    display: inline-block;
+}
+
+.nav__link {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px; /* Увеличиваем размер шрифта */
+    font-weight: 600; /* Делаем шрифт полужирным */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Более стильный шрифт */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav__link.active {
+    color: #df8d16;
+    font-weight: bold; /* Жирный шрифт */
+}
+
+.nav__link:hover {
+    color: #df8d16;
+    transform: translateY(-2px);
+}
+
+/* Основной контент */
 .container {
     display: flex;
     max-width: 1200px;
     margin: 80px auto 20px;
+    position: relative; /* Добавлено для корректного позиционирования */
 }
 
+/* Боковая панель */
 .sidebar {
     width: 250px;
     background: #ffffff;
     padding: 20px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+    position: sticky;
+    top: 80px; /* Отступ сверху */
+    align-self: flex-start;
 }
 
 .filter-form label {
     display: block;
     margin: 10px 0 5px;
+    font-weight: 500;
 }
 
+.filter-form select,
+.filter-form input[type="range"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.filter-form input[type="range"] {
+    padding: 0;
+}
+
+/* Основная секция */
 .main {
     flex-grow: 1;
     padding: 20px;
@@ -56,6 +125,21 @@ body {
     align-items: center;
 }
 
+.section {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.section__title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%; /* Заголовок занимает всю ширину */
+}
+
+/* Галерея товаров */
 .products__gallery {
     display: flex;
     flex-wrap: wrap;
@@ -69,18 +153,37 @@ body {
     padding: 15px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 4px 4px 15px rgb(223, 141, 22);
 }
 
 .product__image {
     max-width: 100%;
     height: auto;
+    border-radius: 8px;
 }
 
 .product__caption {
     font-size: 16px;
     margin-top: 10px;
+    color: #555;
 }
 
+.product__caption del {
+    color: #999;
+    margin-right: 10px;
+}
+
+.product__caption strong {
+    color: #000000;
+    font-size: 18px;
+}
+
+/* Футер */
 .footer {
     text-align: center;
     padding: 15px;
@@ -90,14 +193,17 @@ body {
     width: 100%;
 }
 
+/* Адаптация для мобильных устройств */
 @media screen and (max-width: 1024px) {
     .container {
         flex-direction: column;
         align-items: center;
     }
     .sidebar {
-        width: 100%;
+        width: 50%;
         text-align: center;
+        margin-right: 0;
+        margin-bottom: 20px;
     }
     .products__gallery {
         justify-content: center;
@@ -108,10 +214,29 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-    .product {
+    .header__logo,
+    .header__title {
+        opacity: 0; /* Логотип и название исчезают */
+        height: 0; /* Убираем занимаемое место */
+        margin: 0;
+    }
+    .header__nav {
         width: 100%;
+    }
+    .product {
+        width: 80%;
     }
     .footer {
         display: none;
     }
+}
+
+/* Скрываем все секции по умолчанию */
+.section {
+    display: none;
+}
+
+/* Показываем активную секцию */
+.section.active {
+    display: block;
 }

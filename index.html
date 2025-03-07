@@ -6,11 +6,23 @@
   <meta name="description" content="Магазин теннисных шариков Awesome Balls - лучшие мячи для настольного тенниса по выгодным ценам!">
   <title>Awesome Balls - Магазин теннисных шариков</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="table.css">
+  <link rel="stylesheet" href="reviews.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 <header class="header">
-  <img src="images/logo.png" alt="Awesome Balls Logo" class="header__logo">
-  <h1 class="header__title">Awesome Balls</h1>
+  <div class="header__brand">
+    <img src="images/logo.png" alt="Awesome Balls Logo" class="header__logo">
+    <h1 class="header__title">Awesome Balls</h1>
+  </div>
+  <nav class="header__nav">
+    <ul class="nav__list">
+      <li class="nav__item"><a href="/reviews" class="nav__link">Отзывы</a></li>
+      <li class="nav__item"><a href="/products" class="nav__link">Продукция</a></li>
+      <li class="nav__item"><a href="/champions" class="nav__link">Чемпионы</a></li>
+    </ul>
+  </nav>
 </header>
 
 <div class="container">
@@ -39,7 +51,7 @@
   </aside>
 
   <main class="main">
-    <section class="section">
+    <section class="section" id="products">
       <h2 class="section__title">Наши теннисные шарики</h2>
       <div class="products__gallery">
         <div class="product">
@@ -68,11 +80,102 @@
         </div>
       </div>
     </section>
+
+    <section class="section" id="reviews">
+      <h2 class="section__title">Отзывы пользователей</h2>
+      <div class="reviews__container" id="reviews-container">
+        <div class="preloader" id="preloader">
+          <div class="loader"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="champions">
+      <h2 class="section__title">Обладатели Большого шлема</h2>
+      <div class="table">
+        <div class="table__header">
+          <div>Имя</div>
+          <div>Пол</div>
+          <div>Национальность</div>
+          <div>Год</div>
+        </div>
+        <div class="table__row">
+          <div>Ян-Уве Вальднер</div>
+          <div>Мужчина</div>
+          <div>Швеция</div>
+          <div>1992</div>
+        </div>
+        <div class="table__row">
+          <div>Дэн Япин</div>
+          <div>Женщина</div>
+          <div>Китай</div>
+          <div>1996</div>
+        </div>
+        <div class="table__row">
+          <div>Лю Голян</div>
+          <div>Мужчина</div>
+          <div>Китай</div>
+          <div>1999</div>
+        </div>
+        <div class="table__row">
+          <div>Кун Линхуэй</div>
+          <div>Мужчина</div>
+          <div>Китай</div>
+          <div>2000</div>
+        </div>
+        <div class="table__row">
+          <div>Ван Нань</div>
+          <div>Женщина</div>
+          <div>Китай</div>
+          <div>2000</div>
+        </div>
+        <div class="table__row">
+          <div>Чжан Инин</div>
+          <div>Женщина</div>
+          <div>Китай</div>
+          <div>2005</div>
+        </div>
+        <div class="table__row">
+          <div>Чжан Цзикэ</div>
+          <div>Мужчина</div>
+          <div>Китай</div>
+          <div>2012</div>
+        </div>
+        <div class="table__row">
+          <div>Ли Сяося</div>
+          <div>Женщина</div>
+          <div>Китай</div>
+          <div>2013</div>
+        </div>
+        <div class="table__row">
+          <div>Дин Нин</div>
+          <div>Женщина</div>
+          <div>Китай</div>
+          <div>2016</div>
+        </div>
+        <div class="table__row">
+          <div>Ма Лун</div>
+          <div>Мужчина</div>
+          <div>Китай</div>
+          <div>2016</div>
+        </div>
+        <div class="table__row">
+          <div>Фань Чжэньдун</div>
+          <div>Мужчина</div>
+          <div>Китай</div>
+          <div>2024</div>
+        </div>
+      </div>
+    </section>
   </main>
 </div>
 
 <footer class="footer">
   <p>&copy; 2025 Awesome Balls. Все права защищены.</p>
+  <p id="load-stats">Статистика загрузки: вычисляется...</p>
 </footer>
+
+<script src="scripts.js"></script>
+<script src="reviews.js"></script>
 </body>
 </html>
